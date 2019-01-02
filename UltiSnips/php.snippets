@@ -838,12 +838,12 @@ snippet Response::make "L5:Create a Custom Response"
 return Response::make(${1:$contents}, ${2:200}, ${3:$headers});
 endsnippet
 snippet Route::any "L5:Basic Route with Closure."
-Route::any('${2:users/{id\}}', function (${3:$id}) {
+Route::any('${2:users/{id}}', function (${3:$id}) {
     $4
 });
 endsnippet
 snippet Route::closure "L5:Basic Route with Closure."
-Route::${1:get}('${2:users/{id\}}', function (${3:$id}) {
+Route::${1:get}('${2:users/{id}}', function (${3:$id}) {
     $4
 });
 endsnippet
@@ -851,23 +851,23 @@ snippet Route::controller "L5:Route a controller to a URI with wildcard routing.
 Route::controller('${1:users}', '${2:UserController}');
 endsnippet
 snippet Route::controllerAction "L5:Basic route to a controller action."
-Route::${1:get}('${2:users/{id\}}', '${3:$UserController@profile}');
+Route::${1:get}('${2:users/{id}}', '${3:$UserController@profile}');
 endsnippet
 snippet Route::currentRouteAction "L5:Get the current route name."
 Route::currentRouteAction();
 endsnippet
 snippet Route::delete "L5:Basic Delete Route."
-Route::delete('${1:users/{id\}}', function (${2:$id}) {
+Route::delete('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
 snippet Route::get "L5:Basic Get Route."
-Route::get('${1:users/{id\}}', function (${2:$id}) {
+Route::get('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
 snippet Route::post "L5:Basic Post Route."
-Route::post('${1:users/{id\}}', function (${2:$id}) {
+Route::post('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
@@ -887,7 +887,7 @@ Route::match([${1:'get', 'post'}], '${2:/user/profile}', function () {
 });
 endsnippet
 snippet Route::put "L5:Basic Put Route."
-Route::put('${1:users/{id\}}', function (${2:$id}) {
+Route::put('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
