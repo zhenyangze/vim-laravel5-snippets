@@ -1,150 +1,203 @@
 snippet Auth::check "L5:Determine if the current user is authenticated."
 Auth::check()
 endsnippet
+
 snippet Auth::guest "L5:Determine if the current user is a guest."
 Auth::guest()
 endsnippet
+
 snippet Auth::logout "L5:Log the user out of the application."
 Auth::logout();
 endsnippet
+
 snippet Auth::user "L5:Get the currently authenticated user."
 Auth::user()
 endsnippet
+
 snippet Auth::guard "L5:customize the 'guard' that is used to authenticate and register users"
 Auth::guard('${1:guardName}')$2
 endsnippet
+
 snippet Auth::attempt "L5:Log by passing an array with key-value"
 Auth::attempt([${1:'email' => $email, 'password' => $password}])$2
 endsnippet
+
 snippet Auth::login "L5:Log an existing user instance into your application"
 Auth::login(${1:$user});$2
 endsnippet
+
 snippet Auth::loginUsingId "L5:To log a user into the application by their ID"
 Auth::loginUsingId($1);$2
 endsnippet
+
 snippet Auth::viaRemember "L5:Determine if the user was authenticated using the 'remember me' cookie."
 Auth::viaRemember()
 endsnippet
+
 snippet Auth::routes "L5:Set authentication routes (v5.3)"
 Auth::routes();
 endsnippet
+
 snippet Broadcast::channel "L5:Broadcast Channel Classes"
 Broadcast::channel('${1}', ${2}::class);${3}
 endsnippet
+
 snippet Cache::add "L5:Store an item in the Cache if it doesn't exist."
 Cache::add('${1:key}', ${2:$value}, ${3:$minutes});$4
 endsnippet
+
 snippet Cache::decrement "L5:Decrement a Cached value"
 Cache::decrement('${1:key}', ${2:$amount});$3
 endsnippet
+
 snippet Cache::flush "L5:Remove all items from the cache."
 Cache::flush();
 endsnippet
+
 snippet Cache::forever "L5:Store an item in the Cache Permanently"
 Cache::forever('${1:key}', ${2:$value});$3
 endsnippet
+
 snippet Cache::forget "L5:Remove an Item from the Cache"
 Cache::forget('${1:key}');$2
 endsnippet
+
 snippet Cache::get "L5:Retrieve an Item from the Cache"
 Cache::get('${1:key}', '${2:default}');$3
 endsnippet
+
 snippet Cache::has "L5:Check for existence in Cache"
 Cache::has('${1:key}')$2
 endsnippet
+
 snippet Cache::increment "L5:Increment a Cached value"
 Cache::increment('${1:key}', ${2:$amount});$3
 endsnippet
+
 snippet Cache::pull "L5:Pulling An Item From The Cache"
 Cache::pull('${1:key}');$2
 endsnippet
+
 snippet Cache::put "L5:Store an item in the Cache (key, value, minutes)"
 Cache::put('${1:key}', ${2:$value}, ${3:$minutes});$4
 endsnippet
+
 snippet Cache::remember "L5:Retrieve item or Store a default value if it doesn't exist"
 Cache::remember('${1:key}', ${2:$minutes}, function () {
     $3
 });
 endsnippet
+
 snippet Cache::rememberForever "L5:Retrieve item or Store a default value permanently"
 Cache::rememberForever('${1:key}', function () {
     $2
 });
 endsnippet
+
 snippet Cache::lock-get "L5:obtaining arbitrary locks"
 Cache::lock('${1:lock-name}', ${2:60})->get()
 endsnippet
+
 snippet Cache::lock-release "L5:release locks"
 Cache::lock('${1:lock-name}')->release()
 endsnippet
+
 snippet Cache::lock-block "L5:block until the lock becomes available"
 Cache::lock('${1:lock-name}', ${2:60})->block(${3:10})
 endsnippet
+
+snippet Collection::macro "L5:Add New Macro Method on Collection"
+macro(${1:'toUpper'}, function() {
+    return $this->map(function($value) {
+        return $value;
+    });
+})
+endsnippet
+
 snippet Config::all "L5:Get all of the configuration items for the application."
 Config::all();
 endsnippet
+
 snippet Config::get "L5:Get the specified configuration value."
 Config::get('${1:key}', '${2:default}');$3
 endsnippet
+
 snippet Config::has "L5:Determine if the given configuration value exists."
 Config::has('${1:key}')$2
 endsnippet
+
 snippet Config::set "L5:Set a given configuration value."
 Config::set('${1:key}', ${2:$value});$3
 endsnippet
+
 snippet Config::setMany "L5:Set a given configuration value."
 Config::set([
     '${1:key}' => ${2:$value},$3
 ]);$4
 endsnippet
+
 snippet Console::anticipate "L5:Give the user options for repsonse"
 $this->anticipate('${1:Message}');$2
 endsnippet
+
 snippet Console::ask "L5:Prompts the user with a question in the console"
 $this->ask('${1:Question}');$2
 endsnippet
+
 snippet Console::choice "L5:Give the user a predefined set of choices"
 $this->choice('${1:Question?}', [${2'Choice1', 'Choice2'}], ${3:$default});$4
 endsnippet
+
 snippet Console::comment "L5:Log a comment to the console"
 $this->comment('${1:Message}');$2
 endsnippet
+
 snippet  "L5:Logs a confirmation prompt to the console"
 $this->confirm('${1:Do you wish to continue? [Y|N]}');$2
 endsnippet
+
 snippet Console::error "L5:Log error to the console in red"
 $this->error('${1:Message}');$2
 endsnippet
+
 snippet Console::info "L5:Log information to the console in green"
 $this->info('${1:Message}');$2
 endsnippet
+
+snippet Console::argument "L5:Get an argument from constructor"
+$this->argument('$1');$2
+endsnippet
+
 snippet Console::line "L5:Log plain information to the console"
 $this->line('${1:Display this on the screen}');$2
 endsnippet
+
 snippet Console::option "L5:Get an option from constructor"
 $this->option('$1');$2
 endsnippet
+
 snippet Console::question "L5:Logs a question to the console"
 $this->question('${1:Message}');$2
 endsnippet
+
 snippet Console::secret "L5:Prompt the user for hidden input"
 $this->secret('${1:What is the password?}');$2
 endsnippet
+
 snippet Console::table "L5:Prints a nicely formatted table to the console"
 $this->table('${1:$header}, ${2:$row}');$3
 endsnippet
+
 snippet Console::warn "L5:Logs a warn message to the console"
 $this->warn('${1:Message}');$2
 endsnippet
-snippet Cookie::forever "L5:Make a Permanent Cookie"
-$response->withCookie(cookie()->forever('${1:key}', ${2:$value}));$3
+
+snippet Command::progressBar "L5:Show a ProgressBar to the console."
+$bar = $this->output->createProgressBar(${1:100});
+$bar->advance();
+$bar->finish();$2
 endsnippet
-snippet Cookie::get "L5:Retrieve a Cookie value"
-$request->cookie('${1:key}');$2
-endsnippet
-snippet Cookie::set "L5:Attach a Cookie to a Response."
-$response->withCookie(cookie('${1:key}', ${2:$value}));$3
-endsnippet
+
 snippet Crypt::decrypt "L5:Decrypt a value"
 try {
     ${1:$decrypted} = Crypt::decrypt(${2:$encryptedValue});
@@ -152,310 +205,436 @@ try {
     $3
 }$4
 endsnippet
+
 snippet Crypt::encrypt "L5:Encrypt a value"
 Crypt::encrypt(${1:$value});$2
 endsnippet
+
 snippet DB::delete "L5:Run an delete statement against the database."
 DB::delete(${1:'delete users where name = ?'}${2:, ['John']})$3
 endsnippet
+
 snippet DB::insert "L5:Run an insert statement against the database."
 DB::insert(${1:'insert into users (id, name) values (?, ?)'}${2:, [1, 'Dayle']})$3
 endsnippet
+
 snippet DB::select "L5:Run a select statement against the database."
 DB::select(${1:'select * from users where active = ?'}${2:, [1]})$3
 endsnippet
+
 snippet DB::select "L5:Execute an SQL statement and return the boolean result."
 DB::statement(${1:'drop table users'})$2
 endsnippet
+
 snippet DB::transaction_begin "L5:Start a new database transaction."
 DB::beginTransaction();
 endsnippet
+
 snippet DB::transaction_commit "L5:Commit the active database transaction."
 DB::commit();
 endsnippet
+
 snippet DB::transaction_rollback "L5:Rollback the active database transaction."
 DB::rollback();
 endsnippet
+
 snippet DB::transaction "L5:Execute a Closure within a transaction."
 DB::transaction(function () {
     $1
 });$2
 endsnippet
+
 snippet DB::update "L5:Run an update statement against the database."
 DB::update(${1:'update users set votes = 100 where name = ?'}${2:, ['John']});$3
 endsnippet
+
 snippet DB::table "L5:Retrieving rows from a table"
 DB::table('${1:users}')$2
 endsnippet
+
 snippet Event::createClassListener "L5:Create a class based listener using the IoC container."
 Event::createClassListener(${1:listener});$2
 endsnippet
+
 snippet Event::fire "L5:Fire an event and call the listeners."
 Event::fire(${1:new MyCustomEvent()});$2
 endsnippet
+
 snippet Event::firing "L5:Get the event that is currently firing."
 Event::firing();
 endsnippet
+
 snippet Event::flush "L5:Flush a set of pushed events."
 Event::flush('${1:event}');$2
 endsnippet
+
 snippet Event::forget "L5:Remove a set of listeners from the dispatcher."
 Event::forget('${1:event}');$2
 endsnippet
+
 snippet Event::getListeners "L5:Get all of the listeners for a given event name."
 Event::getListeners('${1:eventName}');$2
 endsnippet
+
 snippet Event::hasListeners "L5:Determine if a given event has listeners."
 Event::hasListeners('${1:eventName}');$2
 endsnippet
+
 snippet Event::listen "L5:Register an event listener with the dispatcher."
 Event::listen(${1:events}, ${2:listener}, ${3:priority});$4
 endsnippet
+
 snippet Event::makeListener "L5:Register an event listener with the dispatcher."
 Event::makeListener(${1:listener});$2
 endsnippet
+
 snippet Event::push "L5:Register an event and payload to be fired later."
 Event::push(${1:event}, ${2:payload});$3
 endsnippet
+
 snippet Event::subscribe "L5:Register an event subscriber with the dispatcher."
 Event::subscribe(${1:subscriber});$2
 endsnippet
+
 snippet Event::until "L5:Fire an event until the first non-null response is returned."
 Event::until(${1:event}, ${2:payload});$3
 endsnippet
+
 snippet Hash::check "L5:Check the given plain value against a hash."
 Hash::check(${1:$value}, ${2:$hashedValue})$3
 endsnippet
+
 snippet Hash::make "L5:Hash the given value."
 Hash::make(${1:$value})$2
 endsnippet
+
 snippet Hash::needsRehash "L5:Check if the given hash has been hashed using the given options."
 if (Hash::needsRehash(${1:$hashedValue}))
 {
     ${2:$hashed} = Hash::make(${3:$value});
 }$4
 endsnippet
+
 snippet Helper::array_add "L5:Add an element to an array using 'dot' notation if it doesn't exist."
 array_add(${1:$array}, ${2:'key'}, ${3:'value'})$4
 endsnippet
+
 snippet Helper::array_collapse "L5:Collapse an array of arrays into a single array."
 array_collapse(${1:$array})$2
 endsnippet
+
 snippet Helper::array-data_get "L5:Get an item from an array using 'dot' notation."
 data_get(${1:$array}, ${2:'names.john'}, ${3:'default'})$4
 endsnippet
+
 snippet Helper::array_divide "L5:Divide an array into two arrays. One with keys and the other with values."
 list(${1:$keys}, ${2:$values}) = array_divide(${3:$array})$4
 endsnippet
+
 snippet Helper::array_dot "L5:Flatten a multi-dimensional associative array with dots."
 array_dot(${1:$array})$2
 endsnippet
+
 snippet Helper::array-last "L5:Get the last element of an array. Useful for method chaining."
 last(${1:$array)$2
 endsnippet
+
 snippet Helper::array_except "L5:Get all of the given array except for a specified array of items."
 array_except(${1:$array}, ${2:['key', 'otherKey']})$3
 endsnippet
+
 snippet Helper::array_first "L5:Return the first element in an array passing a given truth test."
 array_first(${1:$array}, function (${2:$key}, ${3:$value}) {
     return ${4:$value >= 150;}
 });$5
 endsnippet
+
 snippet Helper::array_flatten "L5:Will flatten a multi-dimensional array into a single level."
 array_flatten(${1:$array})$2
 endsnippet
+
 snippet Helper::array_forget "L5:Remove one or many array items from a given array using 'dot' notation."
 array_forget(${1:$array}, ${2:'names.joe'})$3
 endsnippet
+
 snippet Helper::array_get "L5:Get an item from an array using 'dot' notation."
 array_get(${1:$array}, ${2:'names.john'}, ${3:'default'})$4
 endsnippet
+
 snippet Helper::array_has "L5:Check if an item exists in an array using 'dot' notation."
 array_has(${1:$array}, ${2:key})$3
 endsnippet
+
 snippet Helper::array-head "L5:Get the first element of an array. Useful for method chaining."
 head(${1:$array})$2
 endsnippet
+
 snippet Helper::array_last "L5:Return the last element in an array passing a given truth test."
 array_last(${1:$array}, function (${2:$key}, ${3:$value}) {
     return ${4:$value >= 150;}
 });$5
 endsnippet
+
 snippet Helper::array_only "L5:Get a subset of the items from the given array."
 array_only(${1:$array}, ${2:['key', 'otherKey']})$3
 endsnippet
+
 snippet Helper::array_pluck "L5:Pluck an array of values from an array."
 array_pluck(${1:$array}, ${2:'value'})$3
 endsnippet
+
 snippet Helper::array_prepend "L5:Push an item onto the beginning of an array."
 array_prepend(${1:$array}, ${2:'value'})$3
 endsnippet
+
 snippet Helper::array_pull "L5:Get a value from the array, and remove it."
 array_pull(${1:$array}, ${2:'value'})$3
 endsnippet
+
 snippet Helper::array_set "L5:Set an array item to a given value using 'dot' notation."
 array_set(${1:$array}, ${2:'products.desk.price'}, ${3:200})$4
 endsnippet
+
 snippet Helper::array_sort_recursive "L5:Recursively sort an array by keys and values."
 array_sort_recursive(${1:$array});$2
 endsnippet
+
 snippet Helper::array_sort "L5:Sort the array using the given callback."
 array_values(array_sort(${1:$array}, function (${2:$key}, ${3:$value}) {
     return ${3:$value}['${4:name}'];
 }));$5
 endsnippet
+
 snippet Helper::array_where "L5:Filter the array using the given callback."
 array_where(${2:$array}, function (${3:$key}, ${4:$value}) {
     return ${4:is_string($value);}
 });$5
 endsnippet
+
 snippet Helper::misc-class_uses_recursive "L5:Returns all traits used by a class, its subclasses and trait of their traits."
 class_uses_recursive(${1:'Foo\Bar\Baz'})$2
 endsnippet
+
 snippet Helper::misc-collect "L5:Create a collection from the given value."
 collect(${1:'Foo\Bar\Baz'})$2
 endsnippet
+
 snippet Helper::misc-csrf_field "L5:Get the value of the current CSRF token."
 csrf_field()
 endsnippet
+
 snippet Helper::misc-csrf_token "L5:Get the value of the current CSRF token."
 csrf_token()
 endsnippet
+
 snippet Helper::misc-dd "L5:Dump the passed variables and end the script."
 dd(${1:$value});$2
 endsnippet
+
 snippet Helper::misc-object_get "L5:Get an item from an object using 'dot' notation."
 object_get(${1:$object, ${2:'names.john'}, ${3:'default'})$4
 endsnippet
+
 snippet Helper::misc-trait_uses_recursive "L5:Returns all traits used by a trait and its traits."
 trait_uses_recursive(${1:'Foo\Bar\Baz'})$2
 endsnippet
+
 snippet Helper::path-app "L5:Get the fully qualified path to the app directory."
 app_path()
 endsnippet
+
 snippet Helper::path-base "L5:Get the fully qualified path to the root of the application install."
 base_path(${1:'file'})$2
 endsnippet
+
 snippet Helper::path-config "L5:Get the fully qualified path to the app directory."
 config_path()
 endsnippet
+
 snippet Helper::path-elixir "L5:Get the path to the versionned Elixir file."
 elixir('${1:file}')$2
 endsnippet
+
 snippet Helper::path-public "L5:Get the fully qualified path to the public directory."
 public_path()
 endsnippet
+
 snippet Helper::path-storage "L5:Get the fully qualified path to the app/storage directory."
 storage_path(${1:'file'})$2
 endsnippet
+
 snippet Helper::strings-camel_case "L5:Convert a value to camel case."
 camel_case(${1:'foo_bar'})$2
 endsnippet
+
 snippet Helper::strings-class_basename "L5:Get the class 'basename' of the given object / class."
 class_basename(${1:'Foo\Bar\Baz'})$2
 endsnippet
+
 snippet Helper::strings-e "L5:Escape HTML entities in a string."
 e(${1:'<html>foo</html>'})$2
 endsnippet
+
 snippet Helper::strings-ends_with "L5:Determine if a given string ends with a given substring."
 ends_with(${1:'haystack'}, ${2:'needles'})$3
 endsnippet
+
 snippet Helper::strings-snake_case "L5:Convert the given string to snake_case."
 snake_case(${1:'fooBar'})$2
 endsnippet
+
 snippet Helper::strings-starts_with "L5:Determine if the given haystack begins with the given needle."
 starts_with(${1:'haystack'}, ${2:'needle'})$3
 endsnippet
+
 snippet Helper::strings-str_contains "L5:Determine if the given haystack contains the given needle."
 str_contains(${1:'This is my name'}, ${2:'my'})$3
 endsnippet
+
 snippet Helper::strings-str_finish "L5:Determine if a given string matches a given pattern. Asterisks may be used to indicate wildcards."
 str_finish(${1:'this/string'}, ${2:'/'})$3
 endsnippet
+
 snippet Helper::strings-str_is "L5:Add a single instance of the given needle to the haystack. Remove any extra instances."
 str_is(${1:'foo*'}, ${2:'foobar'})$3
 endsnippet
+
 snippet Helper::strings-str_limit "L5:Limit the number of characters in a string."
 str_limit(${1:$value}, ${2:100})$3
 endsnippet
+
 snippet Helper::strings-str_random "L5:Generate a random string of the given length."
 str_random(${1:40})$2
 endsnippet
+
 snippet Helper::strings-str_singular "L5:Convert a string to its singular form (English only)."
 str_singular(${1:'string'})$2
 endsnippet
+
 snippet Helper::strings-str_slug "L5:Generate a URL friendly 'slug' from a given string."
 str_slug(${1:'fooBar'})$2
 endsnippet
+
 snippet Helper::strings-studly_case "L5:Convert the given string to StudlyCase."
 studly_case(${1:'foo_bar'})$2
 endsnippet
+
 snippet Helper::strings-title_case "L5:Convert a value to title case."
 title_case(${1:'fooBar'})$2
 endsnippet
+
 snippet Helper::strings-trans "L5:Translate a given language line. Alias of Lang::get."
 trans(${1:'validation.required'})$2
 endsnippet
+
 snippet Helper::strings-trans_choice "L5:Translate a given language line with inflection. Alias of Lang::choice."
 trans_choice(${1:'foo.bar'}, ${2:$count})$3
 endsnippet
+
 snippet Helper::strings-str_plural "L5:Convert a string to its plural form (English only)."
 str_plural(${1:'string'})$2
 endsnippet
+
 snippet Helper::url-action "L5:Generate a URL for a given controller action."
 action(${1:'HomeController@getIndex'}, ${2:$params})$3
 endsnippet
+
 snippet Helper::url-asset "L5:Generate a URL for an asset."
 asset(${1:'img/photo.jpg'})$2
 endsnippet
+
 snippet Helper::url-route "L5:Generate a URL for a given named route."
 route(${1:'routeName'}, ${2:$params})$3
 endsnippet
+
 snippet Helper::url-secure_asset "L5:Generate a HTML link to the given asset using HTTPS."
 secure_asset(${1:'foo/bar'}, ${2:$title}, ${3:$attributes})$4
 endsnippet
+
 snippet Helper::secure_url "L5:Generate a fully qualified URL to a given path using HTTPS."
 secure_url(${1:'foo/bar'}, ${2:$parameters})$3
 endsnippet
-snippet Helper::url-url "L5:Generate a fully qualified URL to the given path."
-url(${1:'foo/bar'}, ${2:$parameters}, ${3:$secure})$4
+
+snippet Helper::url() "L5:Create a Url"
+url(${1:'/'})$2
 endsnippet
+
 snippet Helper::dd "L5:Die and dump helper"
 dd($1);
 endsnippet
+
+snippet Helper::url()->current() "L5:Get Current Url"
+url()->current()$1
+endsnippet
+
+snippet Helper::url()->full() "L5:Get Current full Url"
+url()->full()$1
+endsnippet
+
+snippet Helper::url()->previous() "L5:Get Previous Url"
+url()->previous()$1
+endsnippet
+
+snippet Helper::Cookie->set "L5:Store an Item in the Cookie"
+cookie(${1:$name}, ${2:$value}, ${3:$minutes})$4
+endsnippet
+
+snippet Helper::Cookie->get "L5:Get an Item from the Cookie"
+cookie(${1:$name})$2
+endsnippet
+
+snippet Helper::session->set "L5:Store an Item in the session"
+session([${1:$key} => ${2:$value}])$3
+endsnippet
+
+snippet Helper::session->get "L5:Get an Item from the session"
+session(${1:$name}), ${2:'default'}$3
+endsnippet
+
 snippet Log::alert "L5:Log an alert message to the logs."
 Log::alert('${1:message}');$2
 endsnippet
+
 snippet Log::critical "L5:Log a critical message to the logs."
 Log::critical('${1:message}');$2
 endsnippet
+
 snippet Log::debug "L5:Log a debug message to the logs."
 Log::debug('${1:message}');$2
 endsnippet
+
 snippet Log::emergency "L5:Log an emergency message to the logs."
 Log::emergency('${1:message}');$2
 endsnippet
+
 snippet Log::error "L5:Log an error message to the logs."
 Log::error('${1:message}');$2
 endsnippet
+
 snippet Log::info "L5:Log an informational message to the logs."
 Log::info('${1:message}');$2
 endsnippet
+
 snippet Log::log "L5:Log a message to the logs."
 Log::log('${1:level}', '${2:message}');$3
 endsnippet
+
 snippet Log::notice "L5:Log a notice to the logs."
 Log::notice(${1:message});$2
 endsnippet
+
 snippet Log::useDailyFiles "L5:Register a daily file log handler."
 Log::useDailyFiles('${1:path}', ${2:days}, '${3:level}');$4
 endsnippet
+
 snippet Log::useFiles "L5:Register a file log handler."
 Log::useFiles('${1:path}', '${2:level}');$3
 endsnippet
+
 snippet Log::warning "L5:Log a warning message to the logs."
 Log::warning('${1:message}');$2
 endsnippet
+
 snippet Mail::later "L5:Queue a new e-mail message for sending after (n) seconds."
 Mail::later(${1:5}, '${2:Html.view}', ${3:$data}, function (${4:$message}) {
     ${4}->from(${5:'john@johndoe.com'}, ${6:'John Doe'});
@@ -469,6 +648,7 @@ Mail::later(${1:5}, '${2:Html.view}', ${3:$data}, function (${4:$message}) {
     ${4}->attach(${19:'pathToFile'});
 });$20
 endsnippet
+
 snippet Mail::laterOn "L5:Queue a new e-mail message for sending after (n) seconds on the given queue."
 Mail::queueOn(${1:'queue-name'}, ${2:5}, '${3:Html.view}', ${4:$data}, function (${5:$message}) {
     ${5}->from(${6:'john@johndoe.com'}, ${7:'John Doe'});
@@ -482,6 +662,7 @@ Mail::queueOn(${1:'queue-name'}, ${2:5}, '${3:Html.view}', ${4:$data}, function 
     ${5}->attach(${20:'pathToFile'});
 });$21
 endsnippet
+
 snippet Mail::plain "L5:Send a new message when only a plain part."
 Mail::plain('${1:plainText.view}', ${2:$data}, function (${3:$message}) {
     ${3}->from(${4:'john@johndoe.com'}, ${5:'John Doe'});
@@ -495,6 +676,7 @@ Mail::plain('${1:plainText.view}', ${2:$data}, function (${3:$message}) {
     ${3}->attach(${18:'pathToFile'});
 });$19
 endsnippet
+
 snippet Mail::queue "L5:Queue a new e-mail message for sending."
 Mail::queue('${1:Html.view}', ${2:$data}, function (${3:$message}) {
     ${3}->from(${4:'john@johndoe.com'}, ${5:'John Doe'});
@@ -508,6 +690,7 @@ Mail::queue('${1:Html.view}', ${2:$data}, function (${3:$message}) {
     ${3}->attach(${18:'pathToFile'});
 });$19
 endsnippet
+
 snippet Mail::queueOn "L5:Queue a new e-mail message for sending on the given queue."
 Mail::queueOn(${1:'queue-name'}, '${2:Html.view}', ${3:$data}, function (${4:$message}) {
     ${4}->from(${5:'john@johndoe.com'}, ${6:'John Doe'});
@@ -521,6 +704,7 @@ Mail::queueOn(${1:'queue-name'}, '${2:Html.view}', ${3:$data}, function (${4:$me
     ${4}->attach(${19:'pathToFile'});
 });$20
 endsnippet
+
 snippet Mail::raw "L5:Send a new message when only a raw text part."
 Mail::raw('${1:plain text message}', function (${2:$message}) {
     ${2}->from(${3:'john@johndoe.com'}, ${4:'John Doe'});
@@ -534,6 +718,7 @@ Mail::raw('${1:plain text message}', function (${2:$message}) {
     ${2}->attach(${17:'pathToFile'});
 });$18
 endsnippet
+
 snippet Mail::send "L5:Send a new message using a view."
 Mail::send('${1:Html.view}', ${2:$data}, function (${3:$message}) {
     ${3}->from(${4:'john@johndoe.com'}, ${5:'John Doe'});
@@ -547,27 +732,32 @@ Mail::send('${1:Html.view}', ${2:$data}, function (${3:$message}) {
     ${3}->attach(${18:'pathToFile'});
 });$19
 endsnippet
+
 snippet Mail::to "L5:Mail with Mailable - mailer will automatically use collection 'email' and 'name' properties"
 Mail::to(${1:$request->user()})->send(new ${2:MailableClass});$3
 endsnippet
+
 snippet Mail::to-more "L5:Mail with Mailable - mail to more recipients"
 Mail::to(${1:$request->user()})
     ->cc(${2:$moreUsers})
     ->bcc(${3:$evenMoreUsers})
     ->send(new ${4:MailableClass});$5
 endsnippet
+
 snippet Mail::queue-mailable "L5:Mail with Mailable - Queueing A Mail Message"
 Mail::to(${1:$request->user()})
     ->cc(${2:$moreUsers})
     ->bcc(${3:$evenMoreUsers})
     ->queue(new ${4:MailableClass});$5
 endsnippet
+
 snippet Mail::later-mailable "L5:Mail with Mailable - Delayed Message Queueing"
 Mail::to(${1:$request->user()})
     ->cc(${2:$moreUsers})
     ->bcc(${3:$evenMoreUsers})
     ->later(${4:$when}, new ${5:MailableClass});$6
 endsnippet
+
 snippet Mailable::build-config "L5:Mailable - Configuring Mailable build()"
 return $this->from('${1:example@example.com}')
     ->${2:view}('${3:mails.viewName}')
@@ -575,345 +765,553 @@ return $this->from('${1:example@example.com}')
             ${4:'orderName' => $this->order->name,}
      ]);$5
 endsnippet
+
+snippet Orm::getAttribute "L5:Get Attribute in Model"
+public function get${1:FirstName}Attribute(${2:$value})
+{
+    return ${2:$value};
+}
+endsnippet
+
+snippet Orm::setAttribute "L5:Set Attribute in Model"
+public function set${1:FirstName}Attribute(${2:$value})
+{
+    $this->attributes['${3:first_name}'] = ${2:$value};
+}
+endsnippet
+
+snippet Orm::setCasts "L5:Set Casts in Model"
+protected $casts = [
+    '${1:is_admin}' => '${2:boolean}',
+];$3
+endsnippet
+
+snippet Orm::setConnection "L5:Set Connection for Different Model"
+protected $connection = 'connection-name';$1
+endsnippet
+
+snippet Orm::setFillable "L5:Set Fillable"
+protected $fillable = [];$1
+endsnippet
+
+snippet Orm::setDates "L5:Set Dates that can be formated by Carbon"
+protected $dates = [];$1
+endsnippet
+
+snippet Orm::setAppends "L5:Appends field when need Json Data"
+protected $appends = [];$1
+endsnippet
+
+snippet Orm::setPrimaryKey "L5:Set default table key"
+protected $primaryKey = '${1:uuid}';$2
+endsnippet
+
+snippet Orm::setGuarded "L5:Set Guarded"
+protected $guarded = [];$1
+endsnippet
+
+snippet Orm::setHidden "L5:Set Hidden"
+protected $hidden= [];$1
+endsnippet
+
+snippet Orm::setVisible "L5:Set Visible"
+protected $visible= [];$1
+endsnippet
+
+snippet Orm::addScope "L5:Add Local Scope for Model"
+public function scope${1:Popular}($query)
+{
+    return $query->where(${2:'votes', '>', 100});
+}
+endsnippet
+
+snippet Orm::addScopeWithParams "L5:Add Local Scope for Model With Params"
+public function scope${1:Popular}($query, ${2:$type})
+{
+    return $query->where(${3:'votes', '>', 100});
+}
+endsnippet
+
 snippet Passport::routes "L5:Passport - routes"
 Passport::routes();
 endsnippet
+
 snippet Passport::tokensExpireIn "L5:Passport - tokensExpireIn"
 Passport::tokensExpireIn(Carbon::now()->addDays(${1:15}));$2
 endsnippet
+
 snippet Passport::refreshTokensExpireIn "L5:Passport - refreshTokensExpireIn"
 Passport::refreshTokensExpireIn(Carbon::now()->addDays(${1:30}));$2
 endsnippet
+
 snippet Passport::pruneRevokedTokens "L5:Passport - pruneRevokedTokens"
 Passport::pruneRevokedTokens();
 endsnippet
+
 snippet Redirect::action "L5:Redirect to a controller action, with parameters"
 return redirect()->action('${App\Http\Controllers\HomeController@index}', ${2:['parameterKey' => 'value']});$3
 endsnippet
+
 snippet Redirect::back "L5:Redirect to URL, Route or Controller"
 return redirect()->back()${1:->withErrors($validator)}${2:->withInput()};$3
 endsnippet
+
 snippet Redirect::namedRoute "L5:Redirect to a named route, with parameters"
 return redirect()->route('${named_route}', ${2:['parameterKey' => 'value']});$3
 endsnippet
+
 snippet Redirect::to "L5:Redirect to URL, Route or Controller"
 return redirect('${1:some/url}');$2
 endsnippet
+
 snippet Redirect::withErrors "L5:Redirect to URL, Route or Controller with Errors"
 ->withErrors(${1:$validator})$2
 endsnippet
+
 snippet Redirect::withFlashData "L5:Redirect to URL, Route or Controller with Flash Data"
 ->with('${1:flashKey}', '${2:flashValue}')$3
 endsnippet
+
 snippet Redirect::withInput "L5:Redirect to URL, Route or Controller with Input"
 ->withInput(${1:[1, 2])})$2
 endsnippet
+
 snippet Redirect::withInputAndErrors "L5:Redirect with Inputs and Errors"
 ->withInput(${1:$request->except('key')})
 ->withErrors(${2:$validator})$3
 endsnippet
+
 snippet Redirect::withNamedInput "L5:Redirect to URL, Route or Controller with Input"
 ->withInput(${1:['key' => 'value'])})$2
 endsnippet
+
 snippet Relation::belongsTo "L5:A one-to-one inverse relationship."
 public function ${1:user}()
 {
     return $this->belongsTo('${2:App\User}'${3:, '${4:foreign_key}'}${5:, '${6:other_key}'});
 }$7
 endsnippet
+
 snippet Relation::belongsToMany "L5:A many-to-many relationship."
 public function ${1:roles}()
 {
     return $this->belongsToMany('${2:App\Role}'${3:, '${4:role_user_table}'}${5:, '${6:user_id}'}${7:, '${8:role_id}'});
 }$9
 endsnippet
+
 snippet Relation::hasMany "L5:A one-to-many relationship."
 public function ${1:comments}()
 {
     return $this->hasMany('${2:App\Comment}'${3:, '${4:foreign_key}'}${5:, '${6:local_key}'});
 }$7
 endsnippet
+
 snippet Relation::hasManyThrough "L5:A Has Many Through relationship."
 public function ${1:comments}()
 {
     return $this->hasManyThrough('${2:App\Comment}', ${3:App\Post});
 }$4
 endsnippet
+
 snippet Relation::hasOne "L5:A one-to-one relationship."
 public function ${1:user}()
 {
     return $this->hasOne('${2:App\User}'${3:, '${4:foreign_key}'}${5:, '${6:local_key}'});
 }$7
 endsnippet
+
+snippet Relation::morphTo "L5:A MorphTo relationship."
+public function ${1:commantable}()
+{
+    return $this->morphTo();
+}$2
+endsnippet
+
+snippet Relation::morphMany "L5:A morphMany relationship."
+public function ${1:comments}()
+{
+    return $this->morphMany('${2:App\Comment}', '${3:commentable}');
+}$4
+endsnippet
+
+snippet Relation::morphToMany "L5:A MorphToMany relationship."
+public function ${1:tags}()
+{
+    return $this->morphToMany('${2:App\Tag}', '${3:taggable}');
+}$4
+endsnippet
+
+snippet Relation::morphedByMany "L5:A MorphedByMany relationship."
+public function ${1:posts}()
+{
+    return $this->morphedByMany('${2:App\Post}', '${3:taggable}');
+}$4
+endsnippet
+
 snippet Request::method "L5:Get the request method (GET, POST, ...)."
 $request->method()
 endsnippet
+
 snippet Request::root "L5:Get the root URL for the application."
 $request->root()
 endsnippet
+
 snippet Request::url "L5:Get the URL (no query string) for the request."
 $request->url()
 endsnippet
+
 snippet Request::fullUrl "L5:Get the full URL for the request."
 $request->fullUrl()
 endsnippet
+
 snippet Request::fullUrlWithQuery "L5:Get the full URL for the request with the added query string parameters."
 $request->fullUrlWithQuery(${1:$query})$2
 endsnippet
+
 snippet Request::path "L5:Get the current path info for the request."
 $request->path()
 endsnippet
+
 snippet Request::decodedPath "L5:Get the current encoded path info for the request."
 $request->decodedPath()
 endsnippet
+
 snippet Request::segment "L5:Get a segment from the URI (1 based index)."
 $request->segment(${1:$index}, '${2:default}')$3
 endsnippet
+
 snippet Request::segments "L5:Get all of the segments for the request path."
 $request->segments()
 endsnippet
+
 snippet Request::is "L5:Determine if the current request URI matches a pattern."
 $request->is()
 endsnippet
+
 snippet Request::fullUrlIs "L5:Determine if the current request URL and query string matches a pattern."
 $request->fullUrlIs()
 endsnippet
+
 snippet Request::ajax "L5:Determine if the request is the result of an AJAX call."
 $request->ajax()
 endsnippet
+
 snippet Request::pjax "L5:Determine if the request is the result of an PJAX call."
 $request->pjax()
 endsnippet
+
 snippet Request::secure "L5:Determine if the request is over HTTPS."
 $request->secure()
 endsnippet
+
 snippet Request::ip "L5:Returns the client IP address."
 $request->ip()
 endsnippet
+
 snippet Request::ips "L5:Returns the client IP addresses."
 $request->ips()
 endsnippet
+
 snippet Request::exists "L5:Determine if the request contains a given input item key."
 $request->exists('${1:key}')$2
 endsnippet
-snippet Request::has "L5:Determine if the request contains a non-empty value for an input item."
+
+snippet Request::has "L5:Determine if the request contains an input item."
 $request->has('${1:key}')$2
 endsnippet
+
+snippet Request::filled "L5:Determine if the request contains a non-empty value for an input item."
+$request->filled('${1:key}')$2
+endsnippet
+
 snippet Request::all "L5:Get all of the input and files for the request."
 $request->all()
 endsnippet
+
 snippet Request::input "L5:Retrieve an input item from the request."
 $request->input('${1:key}'${2:, 'default'})$3
 endsnippet
+
 snippet Request::only "L5:Get a subset of the items from the input data."
 $request->only(${1:$keys})$2
 endsnippet
+
 snippet Request::except "L5:Get all of the input except for a specified array of items."
 $request->except(${1:$keys})$2
 endsnippet
+
 snippet Request::intersect "L5:Intersect an array of items with the input data."
 $request->intersect(${1:$keys})$2
 endsnippet
+
 snippet Request::query "L5:Retrieve a query string item from the request."
 $request->query('${1:key}', '${2:default'})$3
 endsnippet
+
 snippet Request::hasCookie "L5:Determine if a cookie is set on the request."
 $request->hasCookie('${1:key}')$2
 endsnippet
+
 snippet Request::cookie "L5:Retrieve a cookie from the request."
 $request->cookie('${1:key}', '${2:default'})$3
 endsnippet
+
 snippet Request::allFiles "L5:Get an array of all of the files on the request."
 $request->allFiles()
 endsnippet
+
 snippet Request::file "L5:Retrieve a file from the request."
 $request->file('${1:key}'${2:, 'default'})$2
 endsnippet
+
 snippet Request::hasFile "L5:Determine if the uploaded data contains a file."
 $request->hasFile('${1:key}')$2
 endsnippet
+
 snippet Request::hasHeader "L5:Determine if a header is set on the request."
 $request->hasHeader('${1:key}')$2
 endsnippet
+
 snippet Request::header "L5:Retrieve a header from the request."
 $request->header('${1:key}', ${2:$default})$3
 endsnippet
+
 snippet Request::server "L5:Retrieve a server variable from the request."
 $request->server('${1:key}', ${2:$default})$3
 endsnippet
+
 snippet Request::old "L5:Retrieve an old input item."
 $request->old('${1:key}'${2:, 'default'})$3
 endsnippet
+
 snippet Request::flash "L5:Flash Input to the Session"
 $request->flash();
 endsnippet
+
 snippet Request::flashOnly "L5:Flash only some Input to the Session"
 $request->flashOnly(${1:$keys});$2
 endsnippet
+
 snippet Request::flashExcept "L5:Flash only some Input to the Session"
 $request->flashExcept(${1:$keys});$2
 endsnippet
+
 snippet Request::flush "L5:Flush all of the old input from the session."
 $request->flush();
 endsnippet
+
 snippet Request::merge "L5:Merge new input into the current request's input array."
 $request->merge(${1:$input})$2
 endsnippet
+
 snippet Request::replace "L5:Replace the input for the current request."
 $request->replace(${1:$input})$2
 endsnippet
+
 snippet Request::json "L5:Determine if the request is sending JSON."
 $request->json()
 endsnippet
+
 snippet Request::isJson "L5:Determine if the request is sending JSON."
 $request->isJson()
 endsnippet
+
 snippet Request::wantsJson "L5:Determine if the current request is asking for JSON in return."
 $request->wantsJson()
 endsnippet
+
 snippet Request::accepts "L5:Determines whether the current requests accepts a given content type."
 $request->accepts(${1:$contentTypes})$2
 endsnippet
+
 snippet Request::prefers "L5:Return the most suitable content type from the given array based on content negotiation."
 $request->prefers(${1:$contentTypes})$2
 endsnippet
+
 snippet Request::acceptsJson "L5:Determines whether a request accepts JSON."
 $request->acceptsJson()
 endsnippet
+
 snippet Request::acceptsHtml "L5:Determines whether a request accepts HTML."
 $request->acceptsHtml()
 endsnippet
+
 snippet Request::format "L5:Get the data format expected in the response."
 $request->format('${1:html}')$2
 endsnippet
+
 snippet Request::bearerToken "L5:Get the bearer token from the request headers."
 $request->bearerToken()
 endsnippet
+
 snippet Request::session "L5:Get the session associated with the request."
 $request->session()
 endsnippet
+
 snippet Request::user "L5:Get the user making the request."
 $request->user()
 endsnippet
+
 snippet Request::route "L5:Get the route handling the request."
 $request->route(${1:$param})
 endsnippet
+
 snippet Request::fingerprint "L5:Get a unique fingerprint for the request / route / IP address."
 $request->fingerprint()
 endsnippet
+
 snippet Request::getUserResolver "L5:Get the user resolver callback."
 $request->getUserResolver()
 endsnippet
+
 snippet Request::setUserResolver "L5:Set the user resolver callback."
 $request->setUserResolver(${1:$callback})$2
 endsnippet
+
 snippet Request::getRouteResolver "L5:Get the route resolver callback."
 $request->getRouteResolver()
 endsnippet
+
 snippet Request::setRouteResolver "L5:Set the route resolver callback."
 $request->setRouteResolver(${1:$callback})$2
 endsnippet
+
 snippet Request::toArray "L5:Get all of the input and files for the request."
 $request->toArray()
 endsnippet
+
 snippet Request::offsetExists "L5:Determine if the given offset exists."
 $request->offsetExists('${1:offset}')$2
 endsnippet
+
 snippet Request::offsetSet "L5:Set the value at the given offset."
 $request->offsetSet('${1:offset}', ${2:$value});$3
 endsnippet
+
 snippet Request::offsetUnset "L5:Remove the value at the given offset."
 $request->offsetUnset('${1:offset}');$2
 endsnippet
+
 snippet Response::download "L5:Create a File Download Response"
 return response()->download(${1:$pathToFile}, ${2:$name}, ${3:$headers});
 endsnippet
+
 snippet Response::json "L5:Create a JSON Response"
 return response()->json(${1:$data}, ${2:200}, ${3:$headers});
 endsnippet
+
+snippet Response::cookie "L5:Create a Response with cookie"
+return response()->cookie(${1:$name}, ${2:$value}, ${3:$minutes});
+endsnippet
+
 snippet Response::jsonp "L5:Create a JSONP Response"
 return response()->jsonp(${1:$callback}, ${2:$data}, ${3:200}, ${4:$headers});
 endsnippet
+
 snippet Response::make "L5:Create a Custom Response"
 return Response::make(${1:$contents}, ${2:200}, ${3:$headers});
 endsnippet
+
 snippet Route::any "L5:Basic Route with Closure."
 Route::any('${2:users/{id}}', function (${3:$id}) {
     $4
 });
 endsnippet
+
 snippet Route::closure "L5:Basic Route with Closure."
 Route::${1:get}('${2:users/{id}}', function (${3:$id}) {
     $4
 });
 endsnippet
+
 snippet Route::controller "L5:Route a controller to a URI with wildcard routing."
 Route::controller('${1:users}', '${2:UserController}');
 endsnippet
+
 snippet Route::controllerAction "L5:Basic route to a controller action."
 Route::${1:get}('${2:users/{id}}', '${3:$UserController@profile}');
 endsnippet
-snippet Route::currentRouteAction "L5:Get the current route name."
+
+snippet Route::currentRouteAction "L5:Get the current route action."
 Route::currentRouteAction();
 endsnippet
+
+snippet Route::currentRouteName "L5:Get the current route Name."
+Route::currentRouteName();
+endsnippet
+
 snippet Route::delete "L5:Basic Delete Route."
 Route::delete('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
+
 snippet Route::get "L5:Basic Get Route."
 Route::get('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
+
 snippet Route::post "L5:Basic Post Route."
 Route::post('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
+
 snippet Route::group "L5:Create a Group of Routes"
 Route::group(${1:['${2:prefix}' => '${3:admin}']}, function () {
     $4
 });
 endsnippet
+
 snippet Route::group-middleware "L5:Create a Group of Routers with middleware defined in RouteServiceProvider"
 Route::group(['middleware' => ['${1:groupName}']], function () {
     $2
 });
 endsnippet
+
 snippet Route::match "L5:Register a new route with the given verbs."
 Route::match([${1:'get', 'post'}], '${2:/user/profile}', function () {
     $3
 });
 endsnippet
+
 snippet Route::put "L5:Basic Put Route."
 Route::put('${1:users/{id}}', function (${2:$id}) {
     $3
 });
 endsnippet
+
 snippet Route::resource "L5:Route to a RESTful Controller"
 Route::resource('${1:user}', '${2:UserController}');
 endsnippet
+
 snippet Route::when "L5:Pattern based filters on routes"
 $router->when('${1:admin/*}', '${2:admin}', ${3:['post']})$4
 endsnippet
+
 snippet Route::model "L5:Register a model binder for a wildcard."
 $router->model('${1:user}', '${2:App\User}')$3
 endsnippet
+
 snippet Route::pattern "L5:Set a global where pattern on all routes."
 $router->pattern('${1:id}', '${2:[0-9]+}')$3
 endsnippet
+
 snippet Route::redirect "L5:a convenient shortcut for performing a simple redirect"
 Route::redirect('${1:URI}', '${2:URI}', ${3:301});
 endsnippet
+
 snippet Route::view "L5:route only needs to return a view; you may provide an array of data to pass to the view as an optional third argument"
 Route::view('${1:URI}', '${2:viewName}');
 endsnippet
+
 snippet Schema::connection "L5:Specify connection for schema operation"
 Schema::connection('${1:foo}')->create('${2:users}', function (${3:$table}) {
     $table->increments('id');$0
 });
 endsnippet
+
 snippet Schema::create-table "L5:Create new table"
 Schema::create('${1:users}', function (Blueprint $table) {
     $table->increments('id');
@@ -921,284 +1319,394 @@ Schema::create('${1:users}', function (Blueprint $table) {
     $table->timestamps();
 });
 endsnippet
+
 snippet Schema::drop "L5:Drop an existing database table"
 Schema::drop('${1:table}');$0
 endsnippet
+
 snippet Schema::dropIfExists "L5:Drop an existing database table if it exists"
 Schema::dropIfExists('${1:table}');$0
 endsnippet
+
 snippet Schema::hasColumn "L5:Check for existence of column(s)"
 if (Schema::hasColumn('${1:table}', '${2:column}')) {
     $0
 }
 endsnippet
+
 snippet Schema::hasTable "L5:Check for existence of table"
 if (Schema::hasTable('${1:table}')) {
     $0
 }
 endsnippet
+
 snippet Schema::rename-table "L5:Rename an existing database table"
 Schema::rename(${1:$from}, ${2:$to});$0
 endsnippet
+
 snippet Schema::table-update "L5:Update an existing table"
 Schema::table('${1:users}', function (Blueprint $table) {
     $0
 });
 endsnippet
+
 snippet Column::bigIncrements "L5:Incrementing ID using a 'big integer' equivalent."
 $table->bigIncrements('${1:id}');$2
 endsnippet
+
 snippet Column::bigInteger "L5:BIGINT equivalent to the table"
 $table->bigInteger('${1:votes}')${2:->nullable()}${3:->default(${4:12})};$0
 endsnippet
+
 snippet Column::binary "L5:BLOB equivalent to the table"
 $table->binary('${1:data}')${2:->nullable()}${3:->default(${4:12})};$0
 endsnippet
+
 snippet Column::boolean "L5:BOOLEAN equivalent to the table"
 $table->boolean('${1:confirmed}')${2:->nullable()}${3:->default(${4:false})};$0
 endsnippet
+
 snippet Column::char "L5:CHAR equivalent with a length (optional)"
 $table->char('${1:name}', ${2:4})${2:->nullable()}${3:->default(${4:'text'})};$0
 endsnippet
+
 snippet Column::date "L5:DATE equivalent to the table"
 $table->date('${1:created_at}')${2:->nullable()}${3:->default(${4:new DateTime()})};$0
 endsnippet
+
 snippet Column::dateTime "L5:DATETIME equivalent to the table"
 $table->dateTime('${1:created_at}')${2:->nullable()}${3:->default(${4:new DateTime()})};$0
 endsnippet
+
 snippet Column::decimal "L5:DECIMAL equivalent with a precision and scale"
 $table->double('${1:amount}', ${2:5}, ${3:2})${4:->nullable()}${5:->default(${6:123.45})};$0
 endsnippet
+
 snippet Column::double "L5:DOUBLE equivalent with precision"
 $table->double('${1:column}', ${2:15}, ${3:8})${4:->nullable()}${5:->default(${6:123.4567})};$0
 endsnippet
+
 snippet Column::dropColumn "L5:Drop a column"
 $table->dropColumn('${1:column}');$0
 endsnippet
+
 snippet Column::dropForeign "L5:Drop a Foreign Key"
 $table->dropForeign('${1:posts_user_id_foreign}');$0
 endsnippet
+
 snippet Column::dropIndex "L5:Drop a basic Index"
 $table->dropIndex('${1:geo_state_index}');$0
 endsnippet
+
 snippet Column::dropPrimary "L5:Drop a Primary key"
 $table->dropPrimary('${1:users_id_primary}');$0
 endsnippet
+
 snippet Column::dropUnique "L5:Drop a Unique Index"
 $table->dropUnique('${1:users_email_unique}');$0
 endsnippet
+
 snippet Column::engine "L5:Set the storage engine for a table"
 $table->engine = '${1:InnoDB}';$0
 endsnippet
+
 snippet Column::enum "L5:ENUM equivalent to the table"
 $table->enum('${1:choices}', ${2:['foo', 'bar']})${3:->nullable()}${4:->default(${5:['foo', 'bar']})};$0
 endsnippet
+
 snippet Column::float "L5:FLOAT equivalent to the table"
 $table->float('${1:amount}')${2:->nullable()}${3:->default(${4:123.45})};$0
 endsnippet
+
 snippet Column::increments "L5:Incrementing ID"
 $table->increments('${1:id}');$0
 endsnippet
+
 snippet Column::index-foreign "L5:Add a Foreign Key to a table"
 $table->foreign('${1:user_id}')->references('${2:id}')->on('${3:users}')${4:->onDelete('${5:cascade}')};$0
 endsnippet
+
 snippet Column::index "L5:Adding a basic index"
 $table->index('${1:column}');$0
 endsnippet
+
 snippet Column::index-primary "L5:Add a primary or array of composite keys"
 $table->primary('${1:id}');$0
 endsnippet
+
 snippet Column::index-unique "L5:Add a unique index"
 $table->unique('${1:column}');$0
 endsnippet
+
 snippet Column::integer "L5:INTEGER equivalent to the table"
 $table->integer('${1:votes}')${2:->unsigned()}${3:->nullable()}${4:->default(${5:12})};$0
 endsnippet
+
 snippet Column::json "L5:JSON equivalent to the table"
 $table->json('${1:column}')${2:->nullable()};$0
 endsnippet
+
 snippet Column::jsonb "L5:JSON equivalent to the table"
 $table->jsonb('${1:column}')${2:->nullable()};$0
 endsnippet
+
 snippet Column::longText "L5:LONGTEXT equivalent to the table"
 $table->longText('${1:description}')${2:->nullable()}${3:->default(${4:'text'})};$0
 endsnippet
+
 snippet Column::mediumText "L5:MEDIUMTEXT equivalent to the table"
 $table->mediumText('${1:mediumText}')${2:->nullable()}${3:->default(${4:'text'})};$0
 endsnippet
+
 snippet Column::morphs "L5:Adds INTEGER taggable_id and STRING taggable_type"
 $table->morphs('${1:taggable}');$0
 endsnippet
+
 snippet Column::rememberToken "L5:Adds remember_token as VARCHAR(100) NULL"
 $table->rememberToken();
 endsnippet
+
 snippet Column::renameColumn "L5:Rename a column"
 $table->renameColumn('${1:from}', '${2:to}');$0
 endsnippet
+
 snippet Column::smallInteger "L5:SMALLINT equivalent to the table"
 $table->smallInteger('${1:votes}')${2:->nullable()}${3:->default(${4:12})};$0
 endsnippet
+
 snippet Column::softDeletes "L5:Adds deleted_at column for soft deletes"
 $table->softDeletes();
 endsnippet
+
 snippet Column::string "L5:VARCHAR equivalent with a length (optional)"
 $table->string('${1:name}', ${2:100})${3:->nullable()}${5:->default(${6:'text'})};$0
 endsnippet
+
 snippet Column::text "L5:TEXT equivalent to the table"
 $table->text('${1:description}')${2:->nullable()}${3:->default(${4:'text'})};$0
 endsnippet
+
 snippet Column::time "L5:TIME equivalent to the table"
 $table->time('${1:sunrise}')${2:->nullable()}${3:->default(${4:new DateTime()})};$0
 endsnippet
+
 snippet Column::timestamp "L5:TIMESTAMP equivalent to the table"
 $table->timestamp('${1:added_on}')${2:->nullable()}${3:->default(${4:time()})};$0
 endsnippet
+
 snippet Column::timestamps "L5:Adds created_at and updated_at columns"
 $table->timestamps();
 endsnippet
+
 snippet Column::tinyInteger "L5:TINYINT equivalent to the table"
 $table->tinyInteger('${1:numbers}');$0
 endsnippet
+
 snippet Column::uuid "L5:UUID equivalent to the table"
 $table->uuid('${1:id}')${2:->nullable()}${3:->default(${4:null})};$0
 endsnippet
+
 snippet Session::all "L5:Retrieve All Data from the Session"
 $request->session()->all();
 endsnippet
+
 snippet Session::flash "L5:Flash an Item in the Session"
 $request->session()->flash('${1:key}', ${2:$value});$3
 endsnippet
+
 snippet Session::flush "L5:Remove All Items from the Session"
 $request->session()->flush();
 endsnippet
+
 snippet Session::forget "L5:Remove an Item from the Session"
 $request->session()->forget('${1:key}');$2
 endsnippet
+
 snippet Session::get "L5:Retrieve an Item from the Session or Default Value"
 $request->session()->get('${1:key}', '${2:default}');$3
 endsnippet
+
 snippet Session::has "L5:Determin if an Item Exists in the Session"
 $request->session()->has('${1:key}');$2
 endsnippet
+
 snippet Session::keep "L5:Reflash Only a Subset of Flash Data"
 $request->session()->keep(${1:['key', 'otherkey']});$2
 endsnippet
+
 snippet Session::push "L5:Push a Value onto an Array Session Value"
 $request->session()->push('${1:key.subArray}', '${2:value}');$3
 endsnippet
+
 snippet Session::put "L5:Store an Item in the Session"
 $request->session()->put('${1:key}', ${2:$value});$3
 endsnippet
+
 snippet Session::reflash "L5:Reflash the Current Flash Data"
 $request->session()->reflash();
 endsnippet
+
 snippet Session::regenerate "L5:Regenerate the Session ID"
 $request->session()->regenerate();
 endsnippet
+
 snippet Storage::allDirectories "L5:Returns an array of all the directories within a given directory and all of its sub-directories"
 Storage::allDirectories(${1:directory});$2
 endsnippet
+
 snippet Storage::allFiles "L5:Returns an array of all of the files in a directory and it's sub-directories"
 Storage::allFiles(${1:directory});$2
 endsnippet
+
 snippet Storage::append "L5:Insert content at the end of a file"
 Storage::append(${1:filePath}, ${2:Appended Text});$3
 endsnippet
+
 snippet Storage::cleanDirectory "L5:Empty the specified directory of all files and folders."
 Storage::cleanDirectory(${1:directory});$2
 endsnippet
+
 snippet Storage::copy "L5:Copy an existing file to another location on the disk"
 Storage::copy(${1:path}, ${2:target});$3
 endsnippet
+
 snippet Storage::delete "L5:Remove one or multiple files from the disk"
 Storage::delete(${1:['file', 'otherFile']});$2
 endsnippet
+
 snippet Storage::deleteDirectory "L5:May be used to remove a directory, including all of its files, from the disk"
 Storage::deleteDirectory(${1:directory});$2
 endsnippet
+
 snippet Storage::directories "L5:Returns an array of all the directories within a given directory"
 Storage::directories(${1:directory});$2
 endsnippet
+
 snippet Storage::exists "L5:Determine if a file exists."
 Storage::exists(${1:filePath});$2
 endsnippet
+
 snippet Storage::extension "L5:Extract the file extension from a file path."
 Storage::extension(${1:filePath});$2
 endsnippet
+
 snippet Storage::files "L5:Returns an array of all of the files in a directory"
 Storage::files(${1:directory});$2
 endsnippet
+
 snippet Storage::get "L5:Retrieve the contents of a given file"
 Storage::get(${1:filePath});$2
 endsnippet
+
 snippet Storage::isDirectory "L5:Determine if the given path is a directory."
 Storage::isDirectory(${1:directory});$2
 endsnippet
+
 snippet Storage::isFile "L5:Determine if the given path is a directory."
 Storage::isFile(${1:path});$2
 endsnippet
+
 snippet Storage::iswritable "L5:Determine if the given path is writable."
 Storage::isWritable(${1:path});$2
 endsnippet
+
 snippet Storage::lastModified "L5:Returns the UNIX timestamp of the last time the file was modified"
 Storage::lastModified(${1:filePath});$2
 endsnippet
+
 snippet Storage::makeDirectory "L5:Will create the given directory, including any needed sub-directories"
 Storage::makeDirectory(${1:directory});$2
 endsnippet
+
 snippet Storage::mimeType "L5:Get the mime-type of a given file."
 Storage::mimeType(${1:path});$2
 endsnippet
+
 snippet Storage::move "L5:Move an existing file to a new location on the disk"
 Storage::move(${1:path}, ${2:target});$3
 endsnippet
+
 snippet Storage::name "L5:Extract the file name from a file path."
 Storage::name(${1:filePath});$2
 endsnippet
+
 snippet Storage::prepend "L5:Insert content at the beginning of a file"
 Storage::prepend(${1:filePath}, ${2:Prepended Text});$3
 endsnippet
+
 snippet Storage::put "L5:Store a file on disk"
 Storage::put(${1:filePath}, ${2:$contents});$3
 endsnippet
+
+snippet Storage::putFile "L5:Store a file on disk as stream"
+Storage::putFile(${1:filePath}, ${2:$contents});$3
+endsnippet
+
 snippet Storage::size "L5:Get the size of the file in bytes"
 Storage::size(${1:filePath});$2
 endsnippet
+
 snippet Storage::type "L5:Get the file type of a given file."
 Storage::type(${1:filePath});$2
 endsnippet
+
+snippet Storage::temporaryUrl "L5:Create A temp Url of a given file."
+Storage::temporaryUrl(${1:'file1.jpg'}, now()->addMinutes(${2:10}))
+endsnippet
+
 snippet Str::uuid "L5:UUID Methods"
 Str::uuid();
 endsnippet
+
 snippet Str::orderedUuid "L5:UUID Methods"
 Str::orderedUuid();
 endsnippet
+
+snippet Validator::make "L5:Create an Validator"
+$validator = Validator::make($request->all(), [
+    ${1:'title'} => ${2:'bail|required|string|between:2,32'},
+], [
+    ${3:'title.required'} => ${4:'标题字段不能为空'},
+]);
+if ($validator->fails()) {
+    ${4}
+}
+endsnippet
+
 snippet View::composer "L5:Define a View Composer"
 view()->composer('${1:name}', function (${2:$view}) {
     $3
 });
 endsnippet
+
 snippet View::composerClass "L5:Define a Class-based View Composer"
 view()->composer('${1:name}', '${2:App\Http\ViewComposers\SomeComposer}');$3
 endsnippet
+
 snippet View::exists "L5:Determine if a view exists"
 if (view()->exists('${1:view.name}'))
 {
     $2
 }
 endsnippet
+
 snippet View::make "L5:Create a View with Data"
 view('${1:view.name}', ${2:$data});$3
 endsnippet
+
 snippet View::makeCompact "L5:Create a View, Pass Data with compact()"
 view('${1:view.name}', compact(${2:$data}));$3
 endsnippet
+
 snippet View::makeWith "L5:Create a View, Pass Data using with()"
 view(${1:'view.name'})->with('${2:key}', ${3:$value});$4
 endsnippet
+
 snippet View::render "L5:Render a view with some data"
 view(${1:'name'}, ${2:$data})->render();$3
 endsnippet
+
 snippet View::share "L5:Share Data across all Views"
 view()->share('${1:key}', ${2:$value});$3
 endsnippet
+
