@@ -1710,3 +1710,77 @@ snippet View::share "L5:Share Data across all Views"
 view()->share('${1:key}', ${2:$value});$3
 endsnippet
 
+snippet Admin::Box "L5-Admin:admin widgets box"
+// use Encore\Admin\Widgets\Box;
+$box = new Box('Box标题', 'Box内容');
+$box->removable();
+$box->collapsable();
+$box->style('info');
+$box->solid();
+return $box->render();
+endsnippet
+
+snippet Admin::Collapse "L5-Admin:admin widgets Collapse"
+// use Encore\Admin\Widgets\Collapse;
+$collapse = new Collapse();
+$collapse->add('Bar', 'xxxxx');
+$collapse->add('Orders', new Table());
+return $collapse->render();
+endsnippet
+
+snippet Admin::Form "L5-Admin:admin widgets Form"
+// use Encore\Admin\Widgets\Form
+$form = new Form();
+$form->action('example');
+$form->email('email')->default('qwe@aweq.com');
+$form->password('password');
+$form->text('name', '输入框');
+$form->url('url');
+$form->color('color');
+$form->map('lat', 'lng');
+$form->date('date');
+$form->json('val');
+$form->dateRange('created_at', 'updated_at');
+return $form->render();
+endsnippet
+
+snippet Admin::Infobox "L5-Admin:admin widgets Infobox"
+// use Encore\Admin\Widgets\InfoBox;
+$infoBox = new InfoBox('New Users', 'users', 'aqua', '/admin/users', '1024');
+return $infoBox->render();
+endsnippet
+
+snippet Admin::Tab "L5-Admin:admin widgets Tab"
+// use Encore\Admin\Widgets\Tab;
+$tab = new Tab();
+$tab->add('Pie', $pie);
+$tab->add('Table', new Table());
+$tab->add('Text', 'blablablabla....');
+return $tab->render();
+endsnippet
+
+snippet Admin::Table "L5-Admin:admin widgets Table"
+// use Encore\Admin\Widgets\Table;
+$headers = ['Id', 'Email', 'Name', 'Company'];
+$rows = [
+    [1, 'labore21@yahoo.com', 'Ms. Clotilde Gibson', 'Goodwin-Watsica'],
+    [2, 'omnis.in@hotmail.com', 'Allie Kuhic', 'Murphy, Koepp and Morar'],
+    [3, 'quia65@hotmail.com', 'Prof. Drew Heller', 'Kihn LLC'],
+    [4, 'xet@yahoo.com', 'William Koss', 'Becker-Raynor'],
+    [5, 'ipsa.aut@gmail.com', 'Ms. Antonietta Kozey Jr.'],
+];
+$table = new Table($headers, $rows);
+return $table->render();
+endsnippet
+
+snippet Admin::toastr "L5-Admin:admin page message toaster"
+admin_toastr('Message...', 'success'); //info warning error
+endsnippet
+
+snippet Admin::Navbar "L5-Admin::add element on top page"
+// use Encore\Admin\Facades\Admin;
+Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
+    $navbar->left('html...');
+    $navbar->right('html...');
+});
+endsnippet
