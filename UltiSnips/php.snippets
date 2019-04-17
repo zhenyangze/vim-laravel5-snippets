@@ -1784,3 +1784,22 @@ Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
     $navbar->right('html...');
 });
 endsnippet
+
+snippet Admin::error "L5-Admin::admin show error message"
+	// use Illuminate\Support\MessageBag;
+	$error = new MessageBag([
+		'title'   => '错误提示',
+		'message' => '请先完善基本资料',
+	]);
+	return back()->with(compact('error'));
+endsnippet
+
+snippet Admin::success "L5-Admin::admin show success message"
+	// use Illuminate\Support\MessageBag;
+	 $success = new MessageBag([
+		'title'   => '信息提示',
+		'message' => '更新成功',
+	]);
+
+	return back()->with(compact('success'));
+endsnippet
