@@ -1803,3 +1803,35 @@ snippet Admin::success "L5-Admin::admin show success message"
 
 	return back()->with(compact('success'));
 endsnippet
+
+snippet Admin::Auth-Can "L5-Admin::auth user can do something"
+Admin::user()->can('create-post');
+endsnippet
+
+snippet Admin::Auth-Cannot "L5-Admin::auth user cannot do something"
+Admin::user()->cannot('delete-post');
+endsnippet
+
+snippet Admin::isAdministrator "L5-Admin::auth is Administrator"
+Admin::user()->isAdministrator();
+endsnippet
+
+snippet Admin::roles "L5-Admin::auth in roles"
+Admin::user()->inRoles(['editor', 'developer']);
+endsnippet
+
+snippet Admin::admin_success "L5-Admin::show success info"
+admin_success($title, $message);
+endsnippet
+
+snippet Admin::admin_warning "L5-Admin::show warning info"
+admin_warning($title, $message);
+endsnippet
+
+snippet Admin::admin_error "L5-Admin::show error info"
+admin_error($title, $message);
+endsnippet
+
+snippet Admin::admin_info "L5-Admin::show info"
+admin_info($title, $message);
+endsnippet
