@@ -1835,3 +1835,66 @@ endsnippet
 snippet Admin::admin_info "L5-Admin::show info"
 admin_info($title, $message);
 endsnippet
+
+snippet Admin::isRole "L5-Admin::is role"
+Admin::user()->isRole('developer');
+endsnippet
+
+snippet Admin::can "L5-Admin::can"
+Admin::user()->can('create-post');
+endsnippet
+
+snippet Admin::cannot "L5-Admin::cannot"
+Admin::user()->cannot('developer');
+endsnippet
+
+snippet Admin::isAdministrator "L5-Admin::isAdministrator"
+Admin::user()->isAdministrator();
+endsnippet
+
+snippet Admin::extension_tool "L5-Admin::add tools in grid"
+namespace App\Admin\Extensions\Tools;
+
+use Encore\Admin\Admin;
+use Encore\Admin\Grid\Tools\AbstractTool;
+use Illuminate\Support\Facades\Request;
+
+class UserGender extends AbstractTool
+{
+    protected function script()
+    {
+        $url = Request::fullUrlWithQuery(['gender' => '_gender_']);
+
+        return <<<EOT
+$('input:radio.user-gender').change(function () {
+});
+EOT;
+    }
+
+    public function render()
+    {
+        Admin::script($this->script());
+
+        $options = [
+        ];
+
+        return view('admin.tools.gender', compact('options'));
+    }
+}
+endsnippet
+
+snippet Admin::ajax "L5-Admin::ajax in script"
+    $.ajax({
+        method: 'post',
+        url: '{$this->resource}/release',
+        data: {
+            _token:LA.token,
+            ids: selectedRows(),
+            action: {$this->action}
+        },
+        success: function () {
+            $.pjax.reload('#pjax-container');
+            toastr.success('操作成功');
+        }
+    });
+endsnippet
